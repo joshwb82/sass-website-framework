@@ -108,10 +108,12 @@ gulp.task('html:dist', function () {
 // Copys development css file to production enviroment
 gulp.task('css:dist', function () {
   return gulp.src(paths.srcSCSS)
+    .pipe(sass())
     .pipe(concat('style.min.css'))
     .pipe(cleanCSS())
     .pipe(gulp.dest(paths.dist));
 });
+
 
 // Copys development javascript file to production enviroment
 gulp.task('js:dist', function () {
